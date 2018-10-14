@@ -1,0 +1,97 @@
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+     <context:annotation-config/>
+
+    <!--  Question 1 Create a class Database with 2 instance variables port and name. Configure Database class bean in spring container through Spring XML.-->
+    <!--Initialize instance variables using setter method.-->
+    <bean id ="database" class ="com.gradle.demo.Database">
+        <property name="port" value="3306"/>
+        <property name = "name" value="MySQL"/>
+
+
+    </bean>
+
+
+
+    <!--Create a class Restaurant. -->
+    <!--Create an interface HotDrink with an abstract method prepareHotDrink. -->
+    <!--Create two classes Tea and ExpressTea which implements HotDrink Class. -->
+    <!--Create an instance variable of type HotDrink in Restaurant class.-->
+    <!--Configure Tea and ExpressTea classes beans in Spring XML. -->
+    <!--create a bean with the name teaRestaurant of type Restaurant -->
+    <!--which inject Tea object as dependency using setter method-->
+    <!--Get both the beans and invoke prepareHotDrink method via hotDrink-->
+    <!--instance variables. Try inner bean with expressTeaRestaurant.-->
+
+
+
+<bean id ="tea" class ="com.gradle.demo.Tea" name="HotDrink"/>
+    <!--<bean id ="expresstea" class ="com.gradle.demo.ExpressTea"/>-->
+    <bean id ="teaRestaurant" class ="com.gradle.demo.Restaurant" scope="prototype">
+
+        <!--<property name="hotDrink" value="expressTea"/>-->
+        <!--<constructor-arg ref="tea"/>-->
+        <!--<property name="hotDrink" ref="tea"/>-->
+
+    </bean>
+    <!--<bean id="expressTeaRestaurant" class="com.gradle.demo.Restaurantt"/>-->
+
+
+
+
+    <!-- Question  Create Class Complex as follows: class Complex {    List list;-->
+
+    <!--Set set;-->
+
+    <!--Map map;-->
+
+    <!--} Initialize all the instance variables of the Complex class using Spring XML. Give bean name as-->
+
+    <!--complexBean. Get the bean and display the properties.-->
+    <bean id="complexBean" class="com.gradle.demo.Complex">
+        <property name="list">
+            <list>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+            </list>
+        </property>
+        <property name="set">
+            <set>
+                <value>2</value>
+                <value>3</value>
+            </set>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="1" value="One"/>
+                <entry key="2" value="Two"/>
+            </map>
+        </property>
+    </bean>
+
+
+    <!--Autowire hotDrink in Restaurant with tea bean byName, byType and constructor.-->
+
+    <!--<bean id="restaurant" class="com.gradle.demo.Restaurantt" autowire="byName">-->
+    <!--<bean id="hotDrink" class="com.gradle.demo.Tea"/>-->
+    <!--<bean id="restaurant" class="com.gradle.demo.Restaurantt" autowire="byType">-->
+    <!--<bean id="tea" class="com.gradle.demo.Tea"/>-->
+    <!--<bean id="restaurant" class="com.gradle.demo.Restaurantt" autowire="constructor">-->
+    <!--<bean id="tea" class="com.gradle.demo.Tea"/>-->
+
+
+
+
+
+
+
+
+</beans>

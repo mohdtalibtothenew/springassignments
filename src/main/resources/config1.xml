@@ -1,0 +1,26 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+    <context:component-scan base-package="com.gradle.demo"/>
+
+
+
+    <!--  Question 1 Create a class Database with 2 instance variables port and name. Configure Database class bean in spring container through Spring XML.-->
+    <!--Initialize instance variables using setter method.-->
+    <!--<bean id ="database" class ="com.gradle.demo.Database">-->
+        <!--<property name="port" value="3306"/>-->
+        <!--<property name = "name" value="MySQL"/>-->
+    <!--</bean>-->
+    <!--<bean id ="tea" class ="com.gradle.demo.Tea"/>-->
+    <!--<bean id ="teaRestaurant" class ="com.gradle.demo.Main1">-->
+        <!--&lt;!&ndash;<property name="hotDrink" value=""/>&ndash;&gt;-->
+    <!--</bean>-->
+
+
+</beans>
